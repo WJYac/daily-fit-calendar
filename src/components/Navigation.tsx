@@ -1,6 +1,6 @@
 
 import { Link, useLocation } from "react-router-dom";
-import { Home, PlusCircle, BarChart3, Calendar as CalendarIcon } from "lucide-react";
+import { Home, PlusCircle, BarChart3, Calendar as CalendarIcon, Target } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function Navigation() {
@@ -9,6 +9,7 @@ export function Navigation() {
   const navItems = [
     { path: "/", icon: Home, label: "首页" },
     { path: "/record", icon: PlusCircle, label: "记录" },
+    { path: "/training-plan", icon: Target, label: "训练计划" },
     { path: "/statistics", icon: BarChart3, label: "统计" },
     { path: "/calendar", icon: CalendarIcon, label: "日历" },
   ];

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Activity, Flame, MapPin, Clock } from "lucide-react";
+import { Activity, Flame, MapPin, Clock, Target } from "lucide-react";
 
 interface TodayStats {
   steps: number;
@@ -105,7 +105,7 @@ const Index = () => {
         </div>
 
         {/* Quick Actions */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-lg">
             <CardHeader>
               <CardTitle className="text-gray-900">快速记录</CardTitle>
@@ -117,6 +117,22 @@ const Index = () => {
               <Link to="/record">
                 <Button className="w-full bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white">
                   开始记录
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-lg">
+            <CardHeader>
+              <CardTitle className="text-gray-900">训练计划</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-600 mb-4">
+                制定和执行你的训练计划
+              </p>
+              <Link to="/training-plan">
+                <Button variant="outline" className="w-full border-purple-500 text-purple-500 hover:bg-purple-50">
+                  管理计划
                 </Button>
               </Link>
             </CardContent>
@@ -179,7 +195,7 @@ const Index = () => {
               </div>
             </div>
           </CardContent>
-        </Card>
+        </div>
       </div>
     </div>
   );
